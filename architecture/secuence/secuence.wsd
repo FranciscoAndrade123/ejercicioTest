@@ -1,0 +1,19 @@
+@startuml
+title Sales Management - Sequence Diagram
+
+actor User
+participant Customer
+participant Inventory
+participant Invoice
+participant Security
+
+User -> User: Login
+User -> Customer: Request product
+Customer -> Inventory: Check stock
+Inventory --> Customer: Stock available
+Customer -> Invoice: Register sale
+Invoice -> Security: Verify transaction
+Security --> Invoice: Authorization
+Invoice --> Customer: Sale confirmed
+Customer --> User: Transaction complete
+@enduml
