@@ -1,0 +1,19 @@
+@startuml
+title Sales Management System - Use Case Diagram
+
+left to right direction
+actor Seller
+actor Administrator
+
+rectangle System {
+  usecase "Consult Products" as UC1
+  usecase "Generate Invoice" as UC2
+  usecase "Manage Users" as UC3
+  
+  Seller --> UC1
+  Seller --> UC2
+  Administrator --> UC3
+  Administrator --> UC1
+}
+
+@enduml
