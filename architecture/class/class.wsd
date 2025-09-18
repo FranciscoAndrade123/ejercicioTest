@@ -1,0 +1,62 @@
+@startuml
+title Sales Management System – Class Diagram (IDs only)
+
+class Client {
+  + idClient
+}
+
+class Product {
+  + idProduct
+  + idCategory
+  + idSupplier
+}
+
+class CategoryProduct {
+  + idCategory
+}
+
+class Supplier {
+  + idSupplier
+}
+
+class Inventory {
+  + idInventory
+  + idProduct
+}
+
+class Sale {
+  + idSale
+  + idClient
+  + idUser
+}
+
+class Invoice {
+  + idInvoice
+  + idSale
+}
+
+class User {
+  + idUser
+  + idRole
+}
+
+class Role {
+  + idRole
+}
+
+class Permission {
+  + idPermission
+}
+
+' ----------- RELATIONSHIPS -----------
+
+Client "1" --> "many" Sale
+Sale "1" --> "1" Invoice
+CategoryProduct "1" --> "many" Product
+Supplier "1" --> "many" Product
+Product "1" --> "1" Inventory
+User "1" --> "many" Sale
+Role "1" --> "many" User
+Role "1" --> "many" Permission
+
+@enduml
