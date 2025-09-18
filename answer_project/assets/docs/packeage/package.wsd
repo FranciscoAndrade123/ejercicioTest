@@ -1,0 +1,26 @@
+@startuml
+title Sales Management System – Package Diagram
+
+package "Sales" {
+class Sale
+class Invoice
+}
+
+package "Inventory" {
+class Product
+class Inventory
+class ProductCategory
+class Supplier
+}
+
+package "Users" {
+class User
+class Role
+}
+
+package "Security" {
+class Permission
+}
+
+@enduml
+
